@@ -23,14 +23,7 @@ namespace SharesBrokeringService.Commands
 
         public async Task ExecuteAsync(Share share)
         {
-            try
-            {
-                await _sharesContainer.UpsertItemAsync(share, new PartitionKey(share.PartitionKey));
-            }
-            catch (CosmosException e) when (e.StatusCode == HttpStatusCode.NotFound)
-            {
-                Console.WriteLine("it's an upsert why tf do you throw a 404 cosmos");
-            }
+            await _sharesContainer.UpsertItemAsync(share, new PartitionKey(share.PartitionKey));
         }
     }
 }
