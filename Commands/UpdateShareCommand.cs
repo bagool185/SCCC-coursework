@@ -1,7 +1,5 @@
 ﻿using Microsoft.Azure.Cosmos;
 using SharesBrokeringService.Extensions;
-using System;
-using System.Net;
 using System.Threading.Tasks;
 using Share = SharesBrokeringService.Data.Models.Share;
 
